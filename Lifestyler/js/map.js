@@ -39,7 +39,7 @@ function	success(pos)
 		    		fillColor: '#f03',
 		    		fillOpacity: 0.2
 					}).addTo(map);
-		accessJson(map);
+		equipementsProximite(map);
 }
 
 function	error(err)
@@ -47,9 +47,9 @@ function	error(err)
 		alert('Erreur : Géolocalisation refusée : ' + err);
 }
 
-function	accessJson(map)
+function	equipementsProximite(map)
 {
-	var file = "paris_-_liste_des_equipements_de_proximite_ecoles_piscines_jardins.json";
+	var file = "./json/paris_-_liste_des_equipements_de_proximite_ecoles_piscines_jardins.json";
 	var xhttp = new XMLHttpRequest();
 	var iconMatern = L.icon({iconUrl: "./icons/icone-maternelle.png"});
 	var iconElem = L.icon({iconUrl: "./icons/icone-elementaire.png"});
@@ -82,3 +82,23 @@ function	accessJson(map)
 	xhttp.open("GET", file, true);
 	xhttp.send();
 }
+
+/*function	etabPolice()
+{
+	var file = "./json/paris_-_liste_des_equipements_de_proximite_ecoles_piscines_jardins.json";
+	var xhttp = new XMLHttpRequest();
+	var iconPolice = L.icon({iconUrl: "./icons/icone-police.png"});
+	xhttp.onreadystatechange = function() {
+    if (xhttp.readyState == 4 && xhttp.status == 200) 
+    	{
+    		var textDump = xhttp.responseText;
+    		var ArrData = JSON.parse(textDump);
+    		for (var i = 0; i < ArrData.length; i++)
+    		{
+    			L.marker([ArrData[i].geometry.coordinates[1], ArrData[i].geometry.coordinates[0]], {icon: iconPolice}).addTo(map);
+			}
+    	}
+	};
+	xhttp.open("GET", file, true);
+	xhttp.send();
+}*/
