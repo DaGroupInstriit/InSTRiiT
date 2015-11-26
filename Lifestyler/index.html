@@ -11,6 +11,8 @@
 
     <title>Lifestyler - Build your own lifestyle</title>
 
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
@@ -26,7 +28,7 @@
 
 </head>
 
-<body>
+<body onload="init()">
 
     <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -74,31 +76,36 @@
             <div class="col-md-9">
 
                 <div class="thumbnail">
-                    <img class="img-responsive" src="http://placehold.it/800x300" alt="">
-                    <div class="caption-full">
-                    <form>
-                    <br />
-                    &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
-                    <input type="checkbox" name="ecoles" value="1"> Ecoles et salles annexes &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
-                    <input type="checkbox" name="transports" value="2"> Gares et stations diverses &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
-                    <input type="checkbox" name="hopitaux" value="3"> Hopitaux et cliniques &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
-                    </form>
-                    <br />
-                        <h4 class="pull-right">Val de Marne</h4>
-                        <h4>Ivry-Sur-Seine</h4>
-                        <p>Retrouvez le site web de la commune d'Ivry-Sur-Seine <a target="_blank" href="http://www.ivry94.fr">à cette adresse</a>.</p>
-                    <div class="ratings">
-                        <p class="pull-right">3 avis</p>
-                        <p>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star-empty"></span>
-                            4.0 / 5
-                        </p>
+                    <div id="instriitmachin">
+                        <div id="map">
+                        </div>
                     </div>
-                </div>
+                    <div id="affiche">
+                    </div>
+                    <div class="caption-full">
+                        <form>
+                        <br />
+                        &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+                        <input type="checkbox" name="ecoles" value="1"> Ecoles et salles annexes &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+                        <input type="checkbox" name="transports" value="2"> Gares et stations diverses &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+                        <input type="checkbox" name="hopitaux" value="3"> Hopitaux et cliniques &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+                        </form>
+                        <br />
+                            <h4 class="pull-right">Val de Marne</h4>
+                            <h4>Ivry-Sur-Seine</h4>
+                            <p>Retrouvez le site web de la commune d'Ivry-Sur-Seine <a target="_blank" href="http://www.ivry94.fr">à cette adresse</a>.</p>
+                        <div class="ratings">
+                            <p class="pull-right">3 avis</p>
+                            <p>
+                                <span class="glyphicon glyphicon-star"></span>
+                                <span class="glyphicon glyphicon-star"></span>
+                                <span class="glyphicon glyphicon-star"></span>
+                                <span class="glyphicon glyphicon-star"></span>
+                                <span class="glyphicon glyphicon-star-empty"></span>
+                                4.0 / 5
+                            </p>
+                        </div>
+                    </div>
 
                 <div class="well">
 
@@ -171,17 +178,21 @@
                     <p>Copyright &copy; InSTRiiT Topteam 20</p>
                 </div>
             </div>
+            <!-- jQuery -->
+            <script src="js/jquery.js"></script>
+
+            <!-- Bootstrap Core JavaScript -->
+            <script src="js/bootstrap.min.js"></script>
+
+            <!-- Carte -->
+            <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
+            <script src='https://api.mapbox.com/mapbox.js/v2.2.3/mapbox.js'></script>
+            <script type="text/javascript" src="js/test.js"></script>
+
         </footer>
 
     </div>
-    <!-- /.container -->
-
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-
+    <!-- /.container -->   
 </body>
 
 </html>
