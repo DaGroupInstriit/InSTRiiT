@@ -8,9 +8,9 @@ body {
     padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
 }
 
-.thumbnail img {
+/*.thumbnail img {
     width: 100%;
-}
+}*/
 
 .ratings {
     padding-right: 10px;
@@ -18,14 +18,14 @@ body {
     color: #d17581;
 }
 
-.thumbnail {
+/*.thumbnail {
     padding: 0;
 }
 
 .thumbnail .caption-full {
     padding: 9px;
     color: #333;
-}
+}*/
 
 footer {
     margin: 50px 0;

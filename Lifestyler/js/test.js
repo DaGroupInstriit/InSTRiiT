@@ -51,12 +51,12 @@ function	accessJson(map)
 {
 	var file = "paris_-_liste_des_equipements_de_proximite_ecoles_piscines_jardins.json";
 	var xhttp = new XMLHttpRequest();
-	var iconMatern = L.icon({iconUrl: 'icons/icone-maternelle.png'});
-	var iconElem = L.icon({iconUrl: 'icons/icone-elementaire.png'});
-	var iconCreche = L.icon({iconUrl: 'icons/icone-creche.png'});
-	var iconGym = L.icon({iconUrl: 'icons/icone-gym.png'});
-	var iconParc = L.icon({iconUrl: 'icons/icone-parc.png'});
-	var iconBiblio = L.icon({iconUrl: 'icons/icone-biblio.png'});
+	var iconMatern = L.icon({iconUrl: "./icons/icone-maternelle.png"});
+	var iconElem = L.icon({iconUrl: "./icons/icone-elementaire.png"});
+	var iconCreche = L.icon({iconUrl: "./icons/icone-creche.png"});
+	var iconGym = L.icon({iconUrl: "./icons/icone-gym.png"});
+	var iconParc = L.icon({iconUrl: "./icons/icone-parc.png"});
+	var iconBiblio = L.icon({iconUrl: "./icons/icone-biblio.png"});
 	xhttp.onreadystatechange = function() {
     if (xhttp.readyState == 4 && xhttp.status == 200) 
     	{
