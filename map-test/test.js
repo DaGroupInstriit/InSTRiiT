@@ -51,18 +51,31 @@ function	accessJson(map)
 {
 	var file = "paris_-_liste_des_equipements_de_proximite_ecoles_piscines_jardins.json";
 	var xhttp = new XMLHttpRequest();
-	//var i;
+	var iconMatern = L.icon({iconUrl: 'icons/icone-maternelle.png'});
+	var iconElem = L.icon({iconUrl: 'icons/icone-elementaire.png'});
+	var iconCreche = L.icon({iconUrl: 'icons/icone-creche.png'});
+	var iconGym = L.icon({iconUrl: 'icons/icone-gym.png'});
+	var iconParc = L.icon({iconUrl: 'icons/icone-parc.png'});
+	var iconBiblio = L.icon({iconUrl: 'icons/icone-biblio.png'});
 	xhttp.onreadystatechange = function() {
     if (xhttp.readyState == 4 && xhttp.status == 200) 
     	{
     		var textDump = xhttp.responseText;
     		var ArrData = JSON.parse(textDump);
-    		document.getElementById("affiche").innerHTML = ArrData[19].fields.wgs84;
-    		L.marker([48.848, 2.334]).addTo(map);
-    		L.marker([ArrData[0].fields.wgs84[0], ArrData[0].fields.wgs84[1]]).addTo(map);
-    		for (i = 0; i < ArrData.length; i++)
+    		for (var i = 0; i < ArrData.length; i++)
     		{
-    			L.marker([ArrData[i].fields.wgs84[0], ArrData[i].fields.wgs84[1]]).addTo(map);
+    			if (ArrData[i].fields.type_d_equipement === "Ecole maternelle & annexes")
+    				L.marker([ArrData[i].geometry.coordinates[1], ArrData[i].geometry.coordinates[0]], {icon: iconMatern}).addTo(map);
+				if (ArrData[i].fields.type_d_equipement === "Ecole elementaire & annexes")
+					L.marker([ArrData[i].geometry.coordinates[1], ArrData[i].geometry.coordinates[0]], {icon: iconElem}).addTo(map);
+				if (ArrData[i].fields.type_d_equipement === "Creche collective")
+					L.marker([ArrData[i].geometry.coordinates[1], ArrData[i].geometry.coordinates[0]], {icon: iconCreche}).addTo(map);
+				if (ArrData[i].fields.type_d_equipement === "Gymnase")
+					L.marker([ArrData[i].geometry.coordinates[1], ArrData[i].geometry.coordinates[0]], {icon: iconGym}).addTo(map);
+				if (ArrData[i].fields.type_d_equipement === "Promenade ouverte, mail planté, jardin, square")
+					L.marker([ArrData[i].geometry.coordinates[1], ArrData[i].geometry.coordinates[0]], {icon: iconParc}).addTo(map);
+				if (ArrData[i].fields.type_d_equipement === "Bibliotheque" || ArrData[i].fields.type_d_equipement === "Mediatheque")
+					L.marker([ArrData[i].geometry.coordinates[1], ArrData[i].geometry.coordinates[0]], {icon: iconBiblio}).addTo(map);
     		}
     	}
 	};
