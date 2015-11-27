@@ -2,7 +2,11 @@ body {
 	margin: 0;
 }
 
-#instriitmachin #map {
+#map {
 	height: 100vh;
 	width: 100%;
+}
+form label
+{
+	font-weight: normal!important;
 }
