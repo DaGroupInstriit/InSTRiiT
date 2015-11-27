@@ -10,7 +10,7 @@ function	init()
 	}
 	else
 	{
-		var map = L.map('map').addLayer(mapboxTiles).setView([48.848, 2.334], 11);
+		map = L.map('map').addLayer(mapboxTiles).setView([48.848, 2.334], 11);
 	}
 }
 
@@ -27,19 +27,19 @@ function	requestLocation()
 
 function	success(pos)
 {
-		var		lng = pos.coords.longitude;
-		var		lat = pos.coords.latitude;
-		var		mapboxTiles = L.tileLayer('https://api.mapbox.com/v4/superouman.o8eed0e9/{z}/{x}/{y}.png?access_token=' + L.mapbox.accessToken, {
-  					attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>'
-					});
-		var		map = L.map('map').addLayer(mapboxTiles).setView([lat, lng], 15);
-		var		marker = L.marker([lat, lng]).addTo(map);
-		var		circle = L.circle([lat, lng], 500, {
-					color: '#ff0000',
+	var	lng = pos.coords.longitude;
+	var	lat = pos.coords.latitude;
+	var	mapboxTiles = L.tileLayer('https://api.mapbox.com/v4/superouman.o8eed0e9/{z}/{x}/{y}.png?access_token=' + L.mapbox.accessToken, {
+	attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>'
+	});
+	map = L.map('map').addLayer(mapboxTiles).setView([lat, lng], 15);
+	var		marker = L.marker([lat, lng]).addTo(map);
+	var		circle = L.circle([lat, lng], 500, {
+			color: '#ff0000',
 		    		fillColor: '#f03',
 		    		fillOpacity: 0.2
 					}).addTo(map);
-		equipementsProximite(map);
+	// equipementsProximite(map);
 }
 
 function	error(err)
@@ -49,13 +49,13 @@ function	error(err)
 
 function	equipementsProximite(map)
 {
-	var file = "./json/paris_-_liste_des_equipements_de_proximite_ecoles_piscines_jardins.json";
-	var xhttp = new XMLHttpRequest();
+	var file       = "./json/paris_-_liste_des_equipements_de_proximite_ecoles_piscines_jardins.json";
+	var xhttp      = new XMLHttpRequest();
 	var iconMatern = L.icon({iconUrl: "./icons/icone-maternelle.png"});
-	var iconElem = L.icon({iconUrl: "./icons/icone-elementaire.png"});
+	var iconElem   = L.icon({iconUrl: "./icons/icone-elementaire.png"});
 	var iconCreche = L.icon({iconUrl: "./icons/icone-creche.png"});
-	var iconGym = L.icon({iconUrl: "./icons/icone-gym.png"});
-	var iconParc = L.icon({iconUrl: "./icons/icone-parc.png"});
+	var iconGym    = L.icon({iconUrl: "./icons/icone-gym.png"});
+	var iconParc   = L.icon({iconUrl: "./icons/icone-parc.png"});
 	var iconBiblio = L.icon({iconUrl: "./icons/icone-biblio.png"});
 	xhttp.onreadystatechange = function() {
     if (xhttp.readyState == 4 && xhttp.status == 200) 

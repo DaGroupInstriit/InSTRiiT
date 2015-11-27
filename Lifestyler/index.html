@@ -70,17 +70,23 @@
                         <div class="caption-full">
                             <form>
                                 <br />
-                                <input type="checkbox" name="matern" id="matern" value="matern">
+                                <input type="checkbox" name="matern" id="matern" value="matern" 
+                                onchange="choose_category('matern')">
                                 <label for="matern"> Ecoles maternelles</label>&nbsp;
-                                <input type="checkbox" name="elem" id="elem" value="elem">
+                                <input type="checkbox" name="elem" id="elem" value="elem" 
+                                onchange="choose_category('elem')">
                                 <label for="elem"> Ecoles élémentaires</label>&nbsp;
-                                <input type="checkbox" name="creche" id="creche" value="creche">&nbsp;
+                                <input type="checkbox" name="creche" id="creche" value="creche" 
+                                onchange="choose_category('creche')">&nbsp;
                                 <label for="creche"> Crèches collectives</label>&nbsp;
-                                <input type="checkbox" name="gym" id="gym" value="gym">&nbsp; 
+                                <input type="checkbox" name="gym" id="gym" value="gym" 
+                                onchange="choose_category('gym')">&nbsp; 
                                 <label for="gym"> Gymnases</label>&nbsp;
-                                <input type="checkbox" name="square" id="square" value="square">&nbsp;
+                                <input type="checkbox" name="square" id="square" value="square" 
+                                onchange="choose_category('square')">&nbsp;
                                 <label for="square"> Squares et jardins</label>&nbsp;
-                                <input type="checkbox" name="bibli" id="bibli" value="bibli">&nbsp;
+                                <input type="checkbox" name="bibli" id="bibli" value="bibli" 
+                                onchange="choose_category('bibli')">&nbsp;
                                 <label for="bibli"> Bibliothèque</label>&nbsp;
                             </form>
                             <br />
@@ -161,6 +167,7 @@
                 <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
                 <script src='https://api.mapbox.com/mapbox.js/v2.2.3/mapbox.js'></script>
                 <script type="text/javascript" src="js/map.js"></script>
+                <script type="text/javascript" src="js/category.js"></script>
                 <!-- jQuery -->
                 <script src="js/jquery.js"></script>
                 <!-- Bootstrap Core JavaScript -->
